@@ -10,7 +10,7 @@ public class MoveDown : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        speed = new Vector2(0f,Random.Range(-15f, -5f));
+        speed = new Vector2(0f,Random.Range(-11f, -6f));
         rb=this.GetComponent<Rigidbody2D>();
         rb.AddForce(speed, ForceMode2D.Impulse);
     }
