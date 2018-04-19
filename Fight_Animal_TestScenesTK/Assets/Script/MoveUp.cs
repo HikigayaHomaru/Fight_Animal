@@ -16,7 +16,7 @@ public class MoveUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.position.y > 7f)
+		if(transform.position.x < -11f)
         {
             Destroy(this.gameObject);
         }

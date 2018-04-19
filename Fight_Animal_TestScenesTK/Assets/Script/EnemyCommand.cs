@@ -6,9 +6,10 @@ public class EnemyCommand : MonoBehaviour {
 
     public GameObject E;
 
-    private Vector3 EL = new Vector3(-2.4f, 7f, -2f);
-    private Vector3 EM = new Vector3(0f, 7f, -2f);
-    private Vector3 ER = new Vector3(2.4f, 7f, -2f);
+    private Vector3 E1 = new Vector3(-11f, 3f, -2f);
+    private Vector3 E2 = new Vector3(-11f, 1f, -2f);
+    private Vector3 E3 = new Vector3(-11f, -1f, -2f);
+    private Vector3 E4 = new Vector3(-11f, -3f, -2f);
 
     // Use this for initialization
     void Start ()
@@ -23,25 +24,31 @@ public class EnemyCommand : MonoBehaviour {
 
     void MakeE()
     {
-        Invoke("EL"+Random.Range(1,3), Random.Range(0.5f, 3f));
+        Invoke("EL"+Random.Range(1,4), Random.Range(0.1f, 1f));
     }
 
     void EL1()
     {
-        Instantiate(E, EL, Quaternion.identity);
-        Invoke("MakeE", Random.Range(0.5f, 3f));
+        Instantiate(E, E1, Quaternion.Euler(0f,0f,-90f));
+        Invoke("MakeE", Random.Range(0.5f, 2f));
     }
 
     void EL2()
     {
-        Instantiate(E, EM, Quaternion.identity);
-        Invoke("MakeE", Random.Range(0.5f, 3f));
+        Instantiate(E, E2, Quaternion.Euler(0f, 0f, -90f));
+        Invoke("MakeE", Random.Range(0.5f, 2f));
     }
 
     void EL3()
     {
-        Instantiate(E, ER, Quaternion.identity);
-        Invoke("MakeE", Random.Range(0.5f, 3f));
+        Instantiate(E, E3, Quaternion.Euler(0f, 0f, -90f));
+        Invoke("MakeE", Random.Range(0.5f, 2f));
+    }
+
+    void EL4()
+    {
+        Instantiate(E, E4, Quaternion.Euler(0f, 0f, -90f));
+        Invoke("MakeE", Random.Range(0.5f, 2f));
     }
 
 }
